@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Tetris</string>
+    <string name="rightBtnText">Right</string>
+    <string name="leftBtnText">Left</string>
+    <string name="rotateBtnText">Rotate</string>
+    <string name="startBtnText">Start</string>
+    <string name="pauseBtnText">Pause</string>
+    <string name="nextFigureText">Next\nfigure</string>
+    <string name="gameOverText">GAME OVER\nYOUR SCORE</string>
+    <string name="pointText">Points</string>
+    <string name="levelText">Level</string>
+    <string name="highScoreText">High score</string>
+</resources>

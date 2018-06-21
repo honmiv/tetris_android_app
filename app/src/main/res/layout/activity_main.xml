@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_overlay">
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@color/cell"
+        android:onClick="startBtnClicked"
+        android:text="@string/startBtnText"
+        android:textAllCaps="true"
+        android:textColor="@color/cell_filled"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/downBtn"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/statsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/cell_filled"
+        android:visibility="visible"
+        app:layout_constraintLeft_toRightOf="@+id/highScoreTextView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Points: 9999\nLevel: 9999" />
+
+    <TextView
+        android:id="@+id/highScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/cell_filled"
+        android:visibility="visible"
+        tools:text="@string/highScoreText"
+        app:layout_constraintTop_toTopOf="@+id/statsTextView"
+        app:layout_constraintRight_toLeftOf="@+id/statsTextView"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/nextFigureTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/nextFigureText"
+        android:textAlignment="center"
+        android:textColor="@color/cell_filled"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/filledFieldTextView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/filledFieldTextView" />
+
+    <TextView
+        android:id="@+id/nextFigureTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/cell_filled"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toRightOf="@+id/filledFieldTextView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextFigureTextView" />
+
+    <TextView
+        android:id="@+id/fieldTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/cell"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/rotateBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statsTextView"
+        tools:text="■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n" />
+
+    <TextView
+        android:id="@+id/filledFieldTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/cell_filled"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/rotateBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statsTextView"
+        tools:text="■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n■ ■ ■ ■ ■ ■ \n" />
+
+    <ImageButton
+        android:id="@+id/finishBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/finish"
+        app:layout_constraintBottom_toBottomOf="@+id/filledFieldTextView"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintRight_toLeftOf="@+id/filledFieldTextView"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <ImageButton
+        android:id="@+id/pauseBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/pause"
+        app:layout_constraintBottom_toBottomOf="@+id/filledFieldTextView"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintLeft_toRightOf="@+id/filledFieldTextView"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <ImageButton
+        android:id="@+id/leftBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/downBtn"
+        app:layout_constraintTop_toTopOf="@+id/rotateBtn"
+        app:srcCompat="@drawable/left"
+        app:layout_constraintRight_toLeftOf="@+id/rotateBtn"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <ImageButton
+        android:id="@+id/rightBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/right"
+        app:layout_constraintTop_toTopOf="@+id/rotateBtn"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/downBtn"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/rotateBtn"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp" />
+
+    <Button
+        android:id="@+id/rightBtnHitBox"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/downBtn"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintLeft_toRightOf="@+id/downBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rotateBtn"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/leftBtnHitBox"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/downBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/downBtn"
+        app:layout_constraintTop_toTopOf="@+id/rotateBtn"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <ImageButton
+        android:id="@+id/downBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/down"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/rotateBtn"
+        app:layout_constraintRight_toRightOf="@+id/rotateBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginStart="8dp" />
+
+    <ImageButton
+        android:id="@+id/rotateBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/downBtn"
+        app:srcCompat="@drawable/rotate"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+</android.support.constraint.ConstraintLayout>

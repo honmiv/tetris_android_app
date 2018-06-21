@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Тетрис</string>
+    <string name="rightBtnText">Вправо</string>
+    <string name="leftBtnText">Влево</string>
+    <string name="rotateBtnText">Повернуть</string>
+    <string name="startBtnText">Начать</string>
+    <string name="pauseBtnText">Пауза</string>
+    <string name="nextFigureText">След.\nфигура</string>
+    <string name="gameOverText">КОНЕЦ ИГРЫ\nВАШ СЧЕТ</string>
+    <string name="pointText">Очки</string>
+    <string name="levelText">Уровень</string>
+    <string name="highScoreText">Рекорд</string>
+</resources>
